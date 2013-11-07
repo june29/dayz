@@ -1,0 +1,5 @@
+- date = d.date
+
+.day
+  %h3.date{ class: date.strftime("%A").downcase }
+    = date.strftime("%Y-%m-%d %a")
