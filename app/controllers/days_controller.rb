@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   DAYS_PER_PAGE = 14
 
   def index
-    @days_count = Day.count
+    @day_count = Day.count
 
     start_on = Date.today
     end_on   = start_on - (DAYS_PER_PAGE - 1)
@@ -37,5 +37,15 @@ class DaysController < ApplicationController
     else
       head 500
     end
+  end
+
+  def search
+    @query = params[:q]
+    result = Day.search(note_cont: @query).result
+    @result_count = result.count
+
+    @days = result.map { |d|
+      Hashie::Mash.new({ date: d.date, day: d })
+    }
   end
 end

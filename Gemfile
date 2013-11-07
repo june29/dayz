@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'hashie'
+gem 'ransack'
 
 group :doc do
   gem 'sdoc', require: false

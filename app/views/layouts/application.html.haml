@@ -11,7 +11,8 @@
   %body
     %header
       %h1
-        = link_to "Dayz"
+        = link_to "Dayz", root_path
+      = render partial: "days/search_form", locals: { query: @query }
 
     #main
       = yield
