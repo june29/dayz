@@ -20,4 +20,6 @@ ActiveRecord::Schema.define(version: 20131107055325) do
     t.datetime "updated_at"
   end
 
+  add_index "days", ["date"], name: "index_days_on_date", unique: true
+
 end

@@ -1,0 +1,10 @@
+- method = day.new_record? ? :post : :put
+
+.day-form
+  = form_for day, method: method, remote: true do |form|
+    .field
+      = form.hidden_field :date, value: day.date
+    .field
+      = form.text_area :note, rows: 5
+    .action
+      = form.submit "Save"

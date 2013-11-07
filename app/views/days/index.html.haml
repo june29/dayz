@@ -1,2 +1,7 @@
+#days-count
+  = Day.count
+  days memoried.
+
 #days
-  = render partial: "days/single", as: :d, collection: @days
+  - @days.each do |d|
+    = render partial: "days/single", as: :day, object: d.day, locals: { date: d.date }

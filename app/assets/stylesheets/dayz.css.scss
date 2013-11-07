@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 h1, h2, h3 {
@@ -8,8 +8,7 @@ h1, h2, h3 {
 }
 
 header {
-  position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px dotted #999;
 
@@ -25,30 +24,78 @@ header {
       text-decoration: underline;
     }
   }
+}
 
-  #days-count {
+#days-count {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+}
+
+.day-single {
+  position: relative;
+  margin-bottom: 30px;
+
+  .date {
+    padding: 15px;
+    background-color: #f3f3f3;
+    font-size: 14px;
+  }
+
+  .date.saturday {
+    color: blue;
+  }
+
+  .date.sunday {
+    color: red;
+  }
+
+  .note {
+    padding: 0 15px;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .day-form {
+    display: none;
+
+    form {
+      .field {
+        margin-bottom: 10px;
+
+        textarea {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          font-size: 13px;
+          color: #666;
+        }
+      }
+
+      .action {
+        text-align: right;
+
+        input[type="submit"] {
+          -webkit-appearance: none;
+          padding: 10px 30px;
+          border: 1px solid #ccc;
+          font-size: 12px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .editor-opener {
     position: absolute;
     top: 16px;
-    right: 0;
+    right: 16px;
+    font-size: 12px;
+    color: #666;
   }
 }
 
-#days {
-  .day {
-    margin-bottom: 20px;
-
-    .date {
-      padding: 15px;
-      background-color: #f3f3f3;
-      font-size: 14px;
-    }
-
-    .date.saturday {
-      color: blue;
-    }
-
-    .date.sunday {
-      color: red;
-    }
-  }
+.clickable {
+  cursor: pointer;
 }

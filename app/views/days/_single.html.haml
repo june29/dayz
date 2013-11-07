@@ -1,5 +1,11 @@
-- date = d.date
+- day ||= nil
 
-.day
+.day-single
   %h3.date{ class: date.strftime("%A").downcase }
     = date.strftime("%Y-%m-%d %a")
+  - if day
+    .note
+      = day.note
+  = render partial: "days/form", as: :day, object: day.nil? ? Day.new(date: date) : day
+  %span.editor-opener.clickable
+    Write
