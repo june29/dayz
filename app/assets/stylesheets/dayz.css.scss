@@ -2,14 +2,19 @@ body {
   padding: 20px;
 }
 
+h1, h2, h3 {
+  font-family: "Lucida Bright";
+  font-weight: normal;
+}
+
 header {
-  margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px dotted #999;
 
   h1 {
     margin: 0;
-    font-family: "Lucida Bright";
 
     a {
       color: #000;
@@ -18,6 +23,32 @@ header {
 
     a:hover {
       text-decoration: underline;
+    }
+  }
+
+  #days-count {
+    position: absolute;
+    top: 16px;
+    right: 0;
+  }
+}
+
+#days {
+  .day {
+    margin-bottom: 20px;
+
+    .date {
+      padding: 15px;
+      background-color: #f3f3f3;
+      font-size: 14px;
+    }
+
+    .date.saturday {
+      color: blue;
+    }
+
+    .date.sunday {
+      color: red;
     }
   }
 }

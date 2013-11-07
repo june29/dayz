@@ -12,5 +12,9 @@
     %header
       %h1
         = link_to "Dayz"
+      #days-count
+        = Day.count
+        days
+
     #main
       = yield
