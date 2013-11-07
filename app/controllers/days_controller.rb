@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
   def index
-    @days = Day.order("id DESC")
+    @days_count = Day.count
   end
 end
