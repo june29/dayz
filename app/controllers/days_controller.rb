@@ -20,7 +20,8 @@ class DaysController < ApplicationController
 
     if day.save
       render json: {
-        html: render_to_string(partial: "days/single", as: :day, object: day, locals: { date: day.date })
+        html:  render_to_string(partial: "days/single", as: :day, object: day, locals: { date: day.date }),
+        count: Day.count
       }
     else
       head 500

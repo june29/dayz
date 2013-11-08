@@ -7,3 +7,6 @@ $(document).on "ajax:success", ".day-form form", (event, data) ->
   target = $(event.target)
   container = target.parents(".day-single")
   container.replaceWith($(data.html))
+
+  if data.count
+    $("#days-count span").text(data.count)
