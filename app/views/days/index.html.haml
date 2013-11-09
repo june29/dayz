@@ -6,3 +6,9 @@
 #days
   - @days.each do |d|
     = render partial: "days/single", as: :day, object: d.day, locals: { date: d.date }
+
+%nav
+  - if @newer
+    = link_to "Newer", root_path(before: @newer), rel: "prev", class: "link-to-newer"
+  - if @older
+    = link_to "Older", root_path(before: @older), rel: "next", class: "link-to-older"
