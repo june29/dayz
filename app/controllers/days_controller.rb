@@ -6,15 +6,15 @@ class DaysController < ApplicationController
 
     today = Date.today
 
-    start_on = before.present? ? Date.parse(before) : today
-    end_on   = start_on - (DAYS_PER_PAGE - 1)
+    @start_on = before.present? ? Date.parse(before) : today
+    @end_on   = @start_on - (DAYS_PER_PAGE - 1)
 
-    @newer = (start_on >= today - 1) ? nil : [start_on + DAYS_PER_PAGE, today].min
-    @older = end_on - 1
+    @newer = (@start_on >= today - 1) ? nil : [@start_on + DAYS_PER_PAGE, today].min
+    @older = @end_on - 1
 
     @day_count = Day.count
 
-    @days = (end_on..start_on).to_a.reverse.map { |date|
+    @days = (@end_on..@start_on).to_a.reverse.map { |date|
       Hashie::Mash.new({ date: date, day: Day.find_by_date(date) })
     }
   end

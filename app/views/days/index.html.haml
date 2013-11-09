@@ -1,3 +1,7 @@
+- if @start_on < Date.today
+  - content_for :title do
+    = "before #{@start_on}"
+
 #days-count
   %span
     = @day_count
