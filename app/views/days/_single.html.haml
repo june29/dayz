@@ -7,5 +7,4 @@
     .note
       = day.note
   = render partial: "days/form", as: :day, object: day.nil? ? Day.new(date: date) : day
-  %span.editor-opener.clickable
-    Write
+  %i.fa.fa-edit.editor-opener.clickable
