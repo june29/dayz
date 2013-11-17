@@ -8,5 +8,8 @@ $(document).on "ajax:success", ".day-form form", (event, data) ->
   container = target.parents(".day-single")
   container.replaceWith($(data.html))
 
+$(document).on "focus", "textarea", (event) ->
+  $(event.target).autosize()
+
   if data.count
     $("#days-count span").text(data.count)
