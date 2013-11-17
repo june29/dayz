@@ -21,7 +21,8 @@ class DaysController < ApplicationController
 
   def search
     @query = params[:q]
-    result = Day.search(note_cont: @query).result
+    result = Day.search(note_cont: @query).result.order("date DESC")
+
     @result_count = result.count
 
     @days = result.map { |d|
